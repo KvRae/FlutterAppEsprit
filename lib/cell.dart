@@ -18,7 +18,7 @@ class Cell extends StatelessWidget {
           children: [
             Image.asset(
               "Assets/$image",
-              width: 200,
+              width: 150,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
