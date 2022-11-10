@@ -1,7 +1,7 @@
 # flutter_app_esprit
 
 
-A new Flutter project.
+A new Flutter workshop project.
 
 ## Getting Started
 
