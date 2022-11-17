@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_esprit/game.dart';
 
 class Cell extends StatelessWidget {
   //var
-  final String image;
-  final String title;
-  final double price;
+  final Game mGame;
 
-  const Cell(this.image, this.title, this.price, {super.key});
+  const Cell(this.mGame, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +16,8 @@ class Cell extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image.asset(
-              "Assets/$image",
-              width: 150,
+              "Assets/${mGame.image}",
+              width: 240,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -26,11 +25,11 @@ class Cell extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
-                    style: const TextStyle(color: Colors.black, fontSize: 16),
+                    mGame.title,
+                    style: const TextStyle(color: Colors.black),
                   ),
                   Text(
-                    "${price.floor().toString()} TND",
+                    "${mGame.price.floor().toString()} TND",
                     style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
