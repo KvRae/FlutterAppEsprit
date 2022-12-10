@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_esprit/details_screen.dart';
-import 'package:flutter_app_esprit/home_screen.dart';
+import 'package:flutter_app_esprit/auth/signin.dart';
+import 'package:flutter_app_esprit/auth/signup.dart';
+import 'package:flutter_app_esprit/home/details_screen.dart';
+import 'package:flutter_app_esprit/home/home_screen.dart';
+import 'package:flutter_app_esprit/navigations/bottom_nav_bar.dart';
+import 'package:flutter_app_esprit/navigations/tab_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +17,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Atelier Flutter',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: DetailsScreen());
+      title: 'Atelier Flutter',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      //home: const HomeScreen()
+      routes: {
+        Signin.routeName: (context) => const Signin(),
+        SignUp.routeName: (context) => SignUp(),
+        BottomNavScreen.routeName: (context) => const BottomNavScreen(),
+        CustomTabbar.routeName: (context) => const CustomTabbar(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        DetailsScreen.routeName: (context) => const DetailsScreen(),
+      },
+    );
   }
 }
